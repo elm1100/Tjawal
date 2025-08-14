@@ -1,0 +1,319 @@
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Tahoma', sans-serif
+ }
+
+ a {
+   color: white;
+   text-decoration: none
+ }
+
+ body {
+   background-color: #2d2d2b;
+   color: white;
+   text-align: center;
+   overflow-x: hidden;
+   margin: 0;
+   padding: 0;
+   font-family: 'Tahoma', sans-serif;
+   position: relative;
+   /* ensure fixed elements are relative to viewport */
+ }
+
+ header {
+   background-color: #1e1e1d;
+   height: 120px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   padding: 0 15px;
+   border-bottom: 2px solid rgba(219, 215, 215, 0.664);
+ }
+
+
+ .carSliderTitle {
+   font-size: xx-large;
+ }
+
+ .carSliderSubtitle {
+   font-size: medium;
+
+ }
+
+ .logo img {
+   width: 120px;
+   max-width: 100%;
+   height: auto;
+ }
+
+ .car-slider,
+ .testimonials-slider {
+   max-width: 500px;
+   width: 90%;
+   margin: 30px auto;
+   position: relative
+ }
+
+ .slider-container {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: auto;
+   max-height: 320px
+ }
+
+ .arrow {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 20px;
+   cursor: pointer;
+   padding: 10px;
+   color: rgba(255, 255, 255, 0.63);
+   user-select: none;
+   transition: color 0.3s ease;
+   z-index: 5
+ }
+
+ .arrow:hover {
+   color: #fced11
+ }
+
+ .arrow.left {
+   left: 0
+ }
+
+ .arrow.right {
+   right: 0
+ }
+
+ .car-image {
+   max-width: 85%;
+   max-height: 100%;
+   object-fit: contain;
+   border-radius: 10px
+ }
+
+ .car-category {
+   font-size: 24px;
+   font-weight: bold;
+   margin: 0px 0 20px;
+   color: #fced11
+ }
+
+ .car-features {
+   background-color: #3b3b39;
+   padding: 15px 20px;
+   border-radius: 8px;
+   width: 90%;
+   max-width: 480px;
+   margin: auto;
+   text-align: right;
+   font-size: 16px;
+   line-height: 1.6
+ }
+
+ .info-section {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin: 40px 10px;
+   gap: 20px
+ }
+
+ .info-box {
+   background-color: #3b3b39;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+   gap: 40%;
+   padding: 20px;
+   border-radius: 8px;
+   width: 420px;
+   max-width: 100%;
+   text-align: right
+ }
+
+ .info-icon {
+   font-size: 55px;
+   padding-left: 20px;
+   color: #fced11
+ }
+
+ .contact {
+   background-color: #1e1e1d;
+   padding: 25px 15px;
+   font-size: 18px;
+   border-top: 2px solid rgba(219, 215, 215, 0.664);
+ }
+
+ .contact-icons {
+   margin-top: 15px;
+   display: flex;
+   justify-content: center;
+   gap: 60px;
+   font-size: 24px;
+   padding-bottom: 30px
+ }
+
+ .contact-icons i {
+   cursor: pointer;
+   transition: color 0.3s ease, transform 0.3s ease;
+   color: #fced11;
+ }
+
+ .contact-icons i:hover {
+   color: #fced11;
+   transform: scale(1.2)
+ }
+
+ @media(max-width:900px) {
+   .car-category {
+     font-size: 20px
+   }
+
+
+   .arrow {
+
+     font-size: 12px;
+
+   }
+
+   .car-features {
+     width: 95%;
+     font-size: 15px
+   }
+
+
+   .carSliderTitle {
+     font-size: large;
+   }
+
+   .carSliderSubtitle {
+     font-size: medium;
+
+   }
+
+   .info-box {
+     gap: 25%;
+     width: 300px
+   }
+
+   .info-icon {
+     font-size: 45px;
+     padding-left: 15px
+   }
+ }
+
+ @media(max-width:600px) {
+   header {
+     height: 75px;
+     padding: 0 10px
+   }
+
+
+   .testimonials-slider {
+     max-width: 550px;
+
+   }
+
+
+   .logo img {
+     width: 90px
+   }
+
+   .car-category {
+     font-size: 18px
+   }
+
+   .car-features {
+     width: 95%;
+     font-size: 14px;
+     padding: 10px 15px
+   }
+
+   .info-section {
+     margin: 20px 5px
+   }
+
+   .info-box {
+     flex-direction: column;
+     gap: 15px !important;
+     padding: 15px 10px;
+     width: 80%;
+     text-align: center
+   }
+
+   .info-icon {
+     font-size: 40px;
+     padding-left: 0
+   }
+
+   .contact {
+     padding: 20px 10px;
+     font-size: 15px
+   }
+
+   .contact-icons {
+     gap: 30px;
+     font-size: 20px
+   }
+
+
+ }
+
+ .langBtn {
+   position: absolute;
+   /* relative to header */
+   top: 50%;
+   /* center vertically */
+   right: 20px;
+   /* distance from right edge */
+   transform: translateY(-50%);
+   /* true vertical centering */
+   background: #333;
+   color: white;
+   border: none;
+   padding: 6px 12px;
+   /* normal button size */
+   font-size: 14px;
+   border-radius: 5px;
+   cursor: pointer;
+   z-index: 10;
+ }
+
+ .langBtn:hover {
+   background: #555;
+ }
+
+ /* smaller on mobile */
+ @media (max-width: 768px) {
+   .langBtn {
+     top: 50%;
+     right: 15px;
+     padding: 4px 8px;
+     font-size: 10px;
+     position: absolute;
+     /* relative to header */
+     top: 50%;
+     /* center vertically */
+     right: 20px;
+     /* distance from right edge */
+     transform: translateY(-50%);
+     /* true vertical centering */
+     background: #333;
+     color: white;
+     border: none;
+     padding: 6px 12px;
+     /* normal button size */
+     font-size: 14px;
+     border-radius: 5px;
+     cursor: pointer;
+     z-index: 10;
+
+   }
+ }

@@ -1,400 +1,421 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="styles.css">
   <title>Tejawal Car Rental</title>
-
+  <meta name="google-site-verification" content="xqKVVUsCjqVsMyk5srnKbtqhFoxAjPXoIw-TCZgYKoc" />
   <style>
-  
+
   </style>
 
   <script>
     let currentLang = "ar";
 
-   let categories = [
-  {
-    name: { ar: "تاهو", en: "Tahoe" },
-    img: "photos/tahoe.webp",
-    features: {
-      dailyUnlimited: { ar: "750 ريال", en: "750 SAR" },
-      dailyLimited: { ar: "450 ريال (300 كم)", en: "450 SAR (300 km)" },
-      year: "2022",
-      company: { ar: "شيفروليه", en: "Chevrolet" },
-      seats: { ar: "7 ركاب", en: "7 seats" }
-    }
-  },
-  {
-    name: { ar: "كامري", en: "Camry" },
-    img: "photos/camry.webp",
-    features: {
-      dailyUnlimited: { ar: "380 ريال", en: "380 SAR" },
-      dailyLimited: { ar: "240 ريال (300 كم)", en: "240 SAR (300 km)" },
-      year: "2022",
-      company: { ar: "تويوتا", en: "Toyota" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: "سوناتا", en: "Sonata" },
-    img: "photos/sonata.webp",
-    features: {
-      dailyUnlimited: { ar: "380 ريال", en: "380 SAR" },
-      dailyLimited: { ar: "240 ريال (300 كم)", en: "240 SAR (300 km)" },
-      year: "2022",
-      company: { ar: "هيونداي", en: "Hyundai" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: "النترا", en: "Elantra" },
-    img: "photos/elantra.webp",
-    features: {
-      dailyUnlimited: { ar: "300 ريال", en: "300 SAR" },
-      dailyLimited: { ar: "120 ريال (300 كم)", en: "120 SAR (300 km)" },
-      year: "2020",
-      company: { ar: "هيونداي", en: "Hyundai" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: "اكسنت", en: "Accent" },
-    img: "photos/accent2.webp",
-    features: {
-      dailyUnlimited: { ar: "230 ريال", en: "230 SAR" },
-      dailyLimited: { ar: "130 ريال (300 كم)", en: "130 SAR (300 km)" },
-      year: "2026",
-      company: { ar: "هيونداي", en: "Hyundai" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
- 
-  {
-    name: { ar: "يارس", en: "Yaris" },
-    img: "photos/yaris.webp",
-    features: {
-      dailyUnlimited: { ar: "300 ريال", en: "300 SAR" },                 //////////////
-      dailyLimited: { ar: "250 ريال (300 كم)", en: "250 SAR (300 km)" },         /////////////////
-      year: "2022",
-      company: { ar: "تويوتا", en: "Toyota" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: "جي اس 3 ", en: "Jac" },
-    img: "photos/gac.webp",
-    features: {
-      dailyUnlimited: { ar: "190 ريال", en: "190 SAR" },
-      dailyLimited: { ar: "100 ريال (300 كم)", en: "100 SAR (300 km)" },
-      year: "2023",
-      company: { ar: "جاك", en: "gac" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: "تيجو", en: "Tigo" },
-    img: "photos/tiggo4.webp",
-    features: {
-      dailyUnlimited: { ar: "190 ريال", en: "190 SAR" },
-      dailyLimited: { ar: "100 ريال (300 كم)", en: "100 SAR (300 km)" },
-      year: "2023",
-      company: { ar: "شيري", en: "Chery" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  
-  {
-    name: { ar: "اميجراند", en: "Emgrand" },
-    img: "photos/emgrand.webp",
-    features: {
-      dailyUnlimited: { ar: "215 ريال", en: "215 SAR" },
-      dailyLimited: { ar: "115 ريال (300 كم)", en: "115 SAR (300 km)" },
-      year: "2024",
-      company: { ar: "جيلي", en: "Geely" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-   {
-    name: { ar: "اريزو 6", en: "Emgrand" },
-    img: "photos/arrizo.webp",
-    features: {
-      dailyUnlimited: { ar: "210 ريال", en: "210 SAR" },
-      dailyLimited: { ar: "110 ريال (300 كم)", en: "110 SAR (300 km)" },
-      year: "2023",
-      company: { ar: "شيري", en: "Chery" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-   {
-    name: { ar: "زي اس", en: "Emgrand" },
-    img: "photos/ZS.webp",
-    features: {
-      dailyUnlimited: { ar: "220 ريال", en: "220 SAR" },
-      dailyLimited: { ar: "120 ريال (300 كم)", en: "120 SAR (300 km)" },
-      year: "2022",
-      company: { ar: "ام جي", en: "MG" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: "كولراي", en: "Coolray" },
-    img: "photos/coolray.webp",
-    features: {
-      dailyUnlimited: { ar: "240 ريال", en: "240 SAR" },
-      dailyLimited: { ar: "140 ريال (300 كم)", en: "140 SAR (300 km)" },
-      year: "2024",
-      company: { ar: "جيلي", en: "Geely" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: "يوني في", en: "Uni-V" },
-    img: "photos/uni-v.webp",
-    features: {
-      dailyUnlimited: { ar: "300 ريال", en: "300 SAR" },
-      dailyLimited: { ar: "189 ريال (300 كم)", en: "189 SAR (300 km)" },
-      year: "2023",
-      company: { ar: "شانجان", en: "Changan" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-   {
-    name: { ar: " جوليان", en: "Jolion" },
-    img: "photos/jolion.webp",
-    features: {
-      dailyUnlimited: { ar: "240 ريال", en: "240 SAR" },
-      dailyLimited: { ar: "140 ريال (300 كم)", en: "140 SAR (300 km)" },
-      year: "2023",
-      company: { ar: "هافال", en: "Haval" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-   {
-    name: { ar: " السفن", en: "Alsvin" },
-    img: "photos/alsvin.webp",
-    features: {
-      dailyUnlimited: { ar: "190 ريال", en: "190 SAR" },
-      dailyLimited: { ar: "90 ريال (300 كم)", en: "90 SAR (300 km)" },
-      year: "2024",
-      company: { ar: "شانجان", en: "Changan" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-  {
-    name: { ar: " ييجاس", en: "Pegas" },
-    img: "photos/pegas.webp",
-    features: {
-      dailyUnlimited: { ar: "210 ريال", en: "210 SAR" },
-      dailyLimited: { ar: "110 ريال (300 كم)", en: "110 SAR (300 km)" },
-      year: "2026",
-      company: { ar: "كيا", en: "Kia" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  },
-   {
-    name: { ar: " ام جي 5", en: "Mg 5" },
-    img: "photos/mg5.webp",
-    features: {
-      dailyUnlimited: { ar: "200 ريال", en: "200 SAR" },
-      dailyLimited: { ar: "100 ريال (300 كم)", en: "100 SAR (300 km)" },
-      year: "2023",
-      company: { ar: "ام جي ", en: "MG" },
-      seats: { ar: "5 ركاب", en: "5 seats" }
-    }
-  }
-];
+    let categories = [
+      {
+        name: { ar: "تاهو", en: "Tahoe" },
+        img: "photos/tahoe.webp",
+        features: {
+          dailyUnlimited: { ar: "750 ريال", en: "750 SAR" },
+          dailyLimited: { ar: "450 ريال (300 كم)", en: "450 SAR (300 km)" },
+          year: "2022",
+          company: { ar: "شيفروليه", en: "Chevrolet" },
+          seats: { ar: "7 ركاب", en: "7 seats" }
+        }
+      },
+      {
+        name: { ar: "كامري", en: "Camry" },
+        img: "photos/camry.webp",
+        features: {
+          dailyUnlimited: { ar: "380 ريال", en: "380 SAR" },
+          dailyLimited: { ar: "240 ريال (300 كم)", en: "240 SAR (300 km)" },
+          year: "2022",
+          company: { ar: "تويوتا", en: "Toyota" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "سوناتا", en: "Sonata" },
+        img: "photos/sonata.webp",
+        features: {
+          dailyUnlimited: { ar: "380 ريال", en: "380 SAR" },
+          dailyLimited: { ar: "240 ريال (300 كم)", en: "240 SAR (300 km)" },
+          year: "2022",
+          company: { ar: "هيونداي", en: "Hyundai" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "النترا", en: "Elantra" },
+        img: "photos/elantra.webp",
+        features: {
+          dailyUnlimited: { ar: "300 ريال", en: "300 SAR" },
+          dailyLimited: { ar: "120 ريال (300 كم)", en: "120 SAR (300 km)" },
+          year: "2020",
+          company: { ar: "هيونداي", en: "Hyundai" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "اكسنت", en: "Accent" },
+        img: "photos/accent2.webp",
+        features: {
+          dailyUnlimited: { ar: "230 ريال", en: "230 SAR" },
+          dailyLimited: { ar: "130 ريال (300 كم)", en: "130 SAR (300 km)" },
+          year: "2026",
+          company: { ar: "هيونداي", en: "Hyundai" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+
+      {
+        name: { ar: "يارس", en: "Yaris" },
+        img: "photos/yaris.webp",
+        features: {
+          dailyUnlimited: { ar: "300 ريال", en: "300 SAR" },                 //////////////
+          dailyLimited: { ar: "250 ريال (300 كم)", en: "250 SAR (300 km)" },         /////////////////
+          year: "2022",
+          company: { ar: "تويوتا", en: "Toyota" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "جي اس 3 ", en: "Jac" },
+        img: "photos/gac.webp",
+        features: {
+          dailyUnlimited: { ar: "190 ريال", en: "190 SAR" },
+          dailyLimited: { ar: "100 ريال (300 كم)", en: "100 SAR (300 km)" },
+          year: "2023",
+          company: { ar: "جاك", en: "gac" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "تيجو", en: "Tigo" },
+        img: "photos/tiggo4.webp",
+        features: {
+          dailyUnlimited: { ar: "190 ريال", en: "190 SAR" },
+          dailyLimited: { ar: "100 ريال (300 كم)", en: "100 SAR (300 km)" },
+          year: "2023",
+          company: { ar: "شيري", en: "Chery" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+
+      {
+        name: { ar: "اميجراند", en: "Emgrand" },
+        img: "photos/emgrand.webp",
+        features: {
+          dailyUnlimited: { ar: "215 ريال", en: "215 SAR" },
+          dailyLimited: { ar: "115 ريال (300 كم)", en: "115 SAR (300 km)" },
+          year: "2024",
+          company: { ar: "جيلي", en: "Geely" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "اريزو 6", en: "Emgrand" },
+        img: "photos/arrizo.webp",
+        features: {
+          dailyUnlimited: { ar: "210 ريال", en: "210 SAR" },
+          dailyLimited: { ar: "110 ريال (300 كم)", en: "110 SAR (300 km)" },
+          year: "2023",
+          company: { ar: "شيري", en: "Chery" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "زي اس", en: "Emgrand" },
+        img: "photos/ZS.webp",
+        features: {
+          dailyUnlimited: { ar: "220 ريال", en: "220 SAR" },
+          dailyLimited: { ar: "120 ريال (300 كم)", en: "120 SAR (300 km)" },
+          year: "2022",
+          company: { ar: "ام جي", en: "MG" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "كولراي", en: "Coolray" },
+        img: "photos/coolray.webp",
+        features: {
+          dailyUnlimited: { ar: "240 ريال", en: "240 SAR" },
+          dailyLimited: { ar: "140 ريال (300 كم)", en: "140 SAR (300 km)" },
+          year: "2024",
+          company: { ar: "جيلي", en: "Geely" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: "يوني في", en: "Uni-V" },
+        img: "photos/uni-v.webp",
+        features: {
+          dailyUnlimited: { ar: "300 ريال", en: "300 SAR" },
+          dailyLimited: { ar: "189 ريال (300 كم)", en: "189 SAR (300 km)" },
+          year: "2023",
+          company: { ar: "شانجان", en: "Changan" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: " جوليان", en: "Jolion" },
+        img: "photos/jolion.webp",
+        features: {
+          dailyUnlimited: { ar: "240 ريال", en: "240 SAR" },
+          dailyLimited: { ar: "140 ريال (300 كم)", en: "140 SAR (300 km)" },
+          year: "2023",
+          company: { ar: "هافال", en: "Haval" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: " السفن", en: "Alsvin" },
+        img: "photos/alsvin.webp",
+        features: {
+          dailyUnlimited: { ar: "190 ريال", en: "190 SAR" },
+          dailyLimited: { ar: "90 ريال (300 كم)", en: "90 SAR (300 km)" },
+          year: "2024",
+          company: { ar: "شانجان", en: "Changan" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: " ييجاس", en: "Pegas" },
+        img: "photos/pegas.webp",
+        features: {
+          dailyUnlimited: { ar: "210 ريال", en: "210 SAR" },
+          dailyLimited: { ar: "110 ريال (300 كم)", en: "110 SAR (300 km)" },
+          year: "2026",
+          company: { ar: "كيا", en: "Kia" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      },
+      {
+        name: { ar: " ام جي 5", en: "Mg 5" },
+        img: "photos/mg5.webp",
+        features: {
+          dailyUnlimited: { ar: "200 ريال", en: "200 SAR" },
+          dailyLimited: { ar: "100 ريال (300 كم)", en: "100 SAR (300 km)" },
+          year: "2023",
+          company: { ar: "ام جي ", en: "MG" },
+          seats: { ar: "5 ركاب", en: "5 seats" }
+        }
+      }
+    ];
 
 
-  const testimonials = [
-  { author: { ar: "Abo Sham-", en: "Abo Sham-" },
-    text: { ar: "“افضل الاسعار والسيارات ...”", en: "“Best prices and cars...”" } },
-  { author: { ar: "Abo Sham-", en: "Abo Sham-" },
-    text: { ar: "“افضل الاسعار والسيارات ما اخذ الا من عندهم ما شاء الله تبارك الرحمن ،واسلوبهم جميل جدا ومتعاونين”", en: "“The best prices and cars — I only rent from them, mashallah. Their manner is very nice and they are very cooperative.”" } },
-  { author: { ar: "Am20-", en: "Am20-" },
-    text: { ar: "“وش اقول وش اخلي بس هو مكان هو تعامل مع الزبون هو نظافة سيارات وفخامة شي من الاخررر الى توفير الخدمات وانو عندهم سواق يوصلك لبابك شي من الاخرررر انصح اي بنت او مخلوق يتعامل معهم اذا يحب الزين والنظافه ١٠/١٠”", en: "“What can I say? The place, the customer service, the cleanliness and luxury of the cars, the extra services — and they even have a driver who can deliver you to your door. Simply the best. I recommend anyone who appreciates quality and cleanliness to deal with them. 10/10.”" } },
-  { author: { ar: "June-", en: "June-" },
-    text: { ar: "“اللّٰه يرزقهم من واسع فضله التعامل مع الزبون جدًا ممتاز والرجال محترم ويهمه رضا الزبون.. جربت سيارتين من عندهم نظيفات وجودتهم ممتازة وما تركب السيارة الا منظفها لك.. مرنين بالتعامل والأسعار جدًا جدًا ممتازة يراعيك فيها ويراعيك بالكيلوات.. التعامل معهم سلس وسريعين جدًا ومحترمين أنصحكم فيهم بدون تردد”", en: "“May Allah bless them abundantly. Their customer service is excellent, the gentleman is respectful and cares about customer satisfaction. I tried two cars from them — both were clean and in excellent condition, and they never give you the car without cleaning it first. They are flexible, their prices are very, very good, and they are considerate with kilometers. Dealing with them is smooth, very fast, and respectful. I recommend them without hesitation.”" } },
-  { author: { ar: "-عبدالله", en: "Abdullah" },
-    text: { ar: "“ماشاء اللّٰه تبارك اللّٰه قمه الاحترام وسرعه استلام وتسليم السياره وسعر مناسب وسياره نظيفه كلمه شكرا قليله بحقهم أنصح بالتعامل معهم اللّٰه يعطيهم العافيه”", en: "“Mashallah, absolute respect, fast car handover and return, fair price, and a clean vehicle. A simple 'thank you' is not enough for them. I recommend dealing with them. May Allah reward them.”" } },
-  { author: { ar: "Rabah A-", en: "Rabah A-" },
-    text: { ar: "“السيارات عندهم كلها جديده يعني حتى الي يي يشتري سياره و محتار يقدر يمر عندهم يستاجر و يجرب السيارات و اسعارهم مناسبة جدا و الموضف تعامله قمة في الرقي و الاحترام هذي مو اول مره اعاملهم ولا اخر مره انشاء اللّٰه”", en: "“All their cars are new, so even if someone is thinking of buying a car and isn’t sure, they can rent here and try it out. Their prices are very reasonable, and the staff member is the height of elegance and respect. This is not the first time I deal with them, and it will not be the last, inshallah.”" } },
-  { author: { ar: "-1", en: "1-" },
-    text: { ar: "“تعاملهم جداً راقي ومحترمين والسيارات اللي عندهم للأمانه جديده ومريحه بسواقه ومهتمين فيها ، لي سنه متعامله معهم ولا رحت اي محل تأجير ثاني”", en: "“Their service is very refined and respectful. Honestly, their cars are new, comfortable to drive, and well-maintained. I’ve been dealing with them for a year and have never gone to any other rental shop.”" } },
-  { author: { ar: "حمد النصيف-", en: "Hamad Al Nusaif" },
-    text: { ar: "“تعاملنا معهم كثيرا .. وتعاملهم كان راقي جدا وسياراتهم جديدة”", en: "“We have dealt with them many times, and their service has always been very classy. Their cars are new.”" } },
-  { author: { ar: "Fatimah Al suhaibanui-", en: "Fatimah Al Suhaibanui" },
-    text: { ar: "“مكان رائع وتعامل جدا راقي وإنهاء للمعاملات بسرعه ودقه متناهيه اشكر صاحب المكتب على حسن تعاونه ورقي خلقه”", en: "“A wonderful place with very classy service. The transactions are completed quickly and with great precision. I thank the office owner for his cooperation and refined manners.”" } }
-];
+    const testimonials = [
+      {
+        author: { ar: "Abo Sham-", en: "Abo Sham-" },
+        text: { ar: "“افضل الاسعار والسيارات ...”", en: "“Best prices and cars...”" }
+      },
+      {
+        author: { ar: "Abo Sham-", en: "Abo Sham-" },
+        text: { ar: "“افضل الاسعار والسيارات ما اخذ الا من عندهم ما شاء الله تبارك الرحمن ،واسلوبهم جميل جدا ومتعاونين”", en: "“The best prices and cars — I only rent from them, mashallah. Their manner is very nice and they are very cooperative.”" }
+      },
+      {
+        author: { ar: "Am20-", en: "Am20-" },
+        text: { ar: "“وش اقول وش اخلي بس هو مكان هو تعامل مع الزبون هو نظافة سيارات وفخامة شي من الاخررر الى توفير الخدمات وانو عندهم سواق يوصلك لبابك شي من الاخرررر انصح اي بنت او مخلوق يتعامل معهم اذا يحب الزين والنظافه ١٠/١٠”", en: "“What can I say? The place, the customer service, the cleanliness and luxury of the cars, the extra services — and they even have a driver who can deliver you to your door. Simply the best. I recommend anyone who appreciates quality and cleanliness to deal with them. 10/10.”" }
+      },
+      {
+        author: { ar: "June-", en: "June-" },
+        text: { ar: "“اللّٰه يرزقهم من واسع فضله التعامل مع الزبون جدًا ممتاز والرجال محترم ويهمه رضا الزبون.. جربت سيارتين من عندهم نظيفات وجودتهم ممتازة وما تركب السيارة الا منظفها لك.. مرنين بالتعامل والأسعار جدًا جدًا ممتازة يراعيك فيها ويراعيك بالكيلوات.. التعامل معهم سلس وسريعين جدًا ومحترمين أنصحكم فيهم بدون تردد”", en: "“May Allah bless them abundantly. Their customer service is excellent, the gentleman is respectful and cares about customer satisfaction. I tried two cars from them — both were clean and in excellent condition, and they never give you the car without cleaning it first. They are flexible, their prices are very, very good, and they are considerate with kilometers. Dealing with them is smooth, very fast, and respectful. I recommend them without hesitation.”" }
+      },
+      {
+        author: { ar: "-عبدالله", en: "Abdullah" },
+        text: { ar: "“ماشاء اللّٰه تبارك اللّٰه قمه الاحترام وسرعه استلام وتسليم السياره وسعر مناسب وسياره نظيفه كلمه شكرا قليله بحقهم أنصح بالتعامل معهم اللّٰه يعطيهم العافيه”", en: "“Mashallah, absolute respect, fast car handover and return, fair price, and a clean vehicle. A simple 'thank you' is not enough for them. I recommend dealing with them. May Allah reward them.”" }
+      },
+      {
+        author: { ar: "Rabah A-", en: "Rabah A-" },
+        text: { ar: "“السيارات عندهم كلها جديده يعني حتى الي يي يشتري سياره و محتار يقدر يمر عندهم يستاجر و يجرب السيارات و اسعارهم مناسبة جدا و الموضف تعامله قمة في الرقي و الاحترام هذي مو اول مره اعاملهم ولا اخر مره انشاء اللّٰه”", en: "“All their cars are new, so even if someone is thinking of buying a car and isn’t sure, they can rent here and try it out. Their prices are very reasonable, and the staff member is the height of elegance and respect. This is not the first time I deal with them, and it will not be the last, inshallah.”" }
+      },
+      {
+        author: { ar: "-1", en: "1-" },
+        text: { ar: "“تعاملهم جداً راقي ومحترمين والسيارات اللي عندهم للأمانه جديده ومريحه بسواقه ومهتمين فيها ، لي سنه متعامله معهم ولا رحت اي محل تأجير ثاني”", en: "“Their service is very refined and respectful. Honestly, their cars are new, comfortable to drive, and well-maintained. I’ve been dealing with them for a year and have never gone to any other rental shop.”" }
+      },
+      {
+        author: { ar: "حمد النصيف-", en: "Hamad Al Nusaif" },
+        text: { ar: "“تعاملنا معهم كثيرا .. وتعاملهم كان راقي جدا وسياراتهم جديدة”", en: "“We have dealt with them many times, and their service has always been very classy. Their cars are new.”" }
+      },
+      {
+        author: { ar: "Fatimah Al suhaibanui-", en: "Fatimah Al Suhaibanui" },
+        text: { ar: "“مكان رائع وتعامل جدا راقي وإنهاء للمعاملات بسرعه ودقه متناهيه اشكر صاحب المكتب على حسن تعاونه ورقي خلقه”", en: "“A wonderful place with very classy service. The transactions are completed quickly and with great precision. I thank the office owner for his cooperation and refined manners.”" }
+      }
+    ];
 
     let index = 0, autoSlideInterval, autoSlideTimeout;
     let testIndex = 0;
 
-function showCategory() {
-  let c = categories[index];
-  const featuresElement = document.getElementById("carFeatures");
+    function showCategory() {
+      let c = categories[index];
+      const featuresElement = document.getElementById("carFeatures");
 
-  document.getElementById("carImage").src = c.img;
-  document.getElementById("categoryName").innerText = c.name[currentLang];
-  featuresElement.style.textAlign = currentLang === "ar" ? "right" : "left";
+      document.getElementById("carImage").src = c.img;
+      document.getElementById("categoryName").innerText = c.name[currentLang];
+      featuresElement.style.textAlign = currentLang === "ar" ? "right" : "left";
 
-  featuresElement.innerHTML =
-    `<p><strong>${currentLang === "ar" ? "السعر اليومي (مفتوح الكيلومترات):" : "Daily Price (Unlimited km):"}</strong> ${c.features.dailyUnlimited[currentLang]}</p>
+      featuresElement.innerHTML =
+        `<p><strong>${currentLang === "ar" ? "السعر اليومي (مفتوح الكيلومترات):" : "Daily Price (Unlimited km):"}</strong> ${c.features.dailyUnlimited[currentLang]}</p>
      <p><strong>${currentLang === "ar" ? "السعر اليومي (كيلومترات محدودة):" : "Daily Price (Limited km):"}</strong> ${c.features.dailyLimited[currentLang]}</p>
     
      <p><strong>${currentLang === "ar" ? "سنة الإصدار:" : "Year:"}</strong> ${c.features.year}</p>
      <p><strong>${currentLang === "ar" ? "الشركة:" : "Company:"}</strong> ${c.features.company[currentLang]}</p>
      <p><strong>${currentLang === "ar" ? "عدد الركاب:" : "Seats:"}</strong> ${c.features.seats[currentLang]}</p>`;
-}
+    }
 
 
-function showTestimonial() {
-  let t = testimonials[testIndex];
-  document.getElementById("testimonialAuthor").innerText = t.author[currentLang];
-  document.getElementById("testimonialText").innerText = t.text[currentLang];
-}
+    function showTestimonial() {
+      let t = testimonials[testIndex];
+      document.getElementById("testimonialAuthor").innerText = t.author[currentLang];
+      document.getElementById("testimonialText").innerText = t.text[currentLang];
+    }
 
-function prevCategory() {
-  index = (index - 1 + categories.length) % categories.length;
-  showCategory();
-  userInteracted();
-}
+    function prevCategory() {
+      index = (index - 1 + categories.length) % categories.length;
+      showCategory();
+      userInteracted();
+    }
 
-function nextCategory() {
-  index = (index + 1) % categories.length;
-  showCategory();
-  userInteracted();
-}
+    function nextCategory() {
+      index = (index + 1) % categories.length;
+      showCategory();
+      userInteracted();
+    }
 
-function prevTestimonial() {
-  testIndex = (testIndex - 1 + testimonials.length) % testimonials.length;
-  showTestimonial();
-}
+    function prevTestimonial() {
+      testIndex = (testIndex - 1 + testimonials.length) % testimonials.length;
+      showTestimonial();
+    }
 
-function nextTestimonial() {
-  testIndex = (testIndex + 1) % testimonials.length;
-  showTestimonial();
-}
+    function nextTestimonial() {
+      testIndex = (testIndex + 1) % testimonials.length;
+      showTestimonial();
+    }
 
-function startAutoSlide() {
-  stopAutoSlide();
-  autoSlideInterval = setInterval(() => {
-    index = (index + 1) % categories.length;
-    showCategory();
-  }, 3000);
-}
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideInterval = setInterval(() => {
+        index = (index + 1) % categories.length;
+        showCategory();
+      }, 3000);
+    }
 
-function stopAutoSlide() {
-  if (autoSlideInterval) clearInterval(autoSlideInterval);
-  if (autoSlideTimeout) clearTimeout(autoSlideTimeout);
-}
+    function stopAutoSlide() {
+      if (autoSlideInterval) clearInterval(autoSlideInterval);
+      if (autoSlideTimeout) clearTimeout(autoSlideTimeout);
+    }
 
-function userInteracted() {
-  stopAutoSlide();
-  autoSlideTimeout = setTimeout(() => {
-    startAutoSlide();
-  }, 15000);
-}
+    function userInteracted() {
+      stopAutoSlide();
+      autoSlideTimeout = setTimeout(() => {
+        startAutoSlide();
+      }, 15000);
+    }
 
-function switchLanguage() {
-  currentLang = currentLang === "ar" ? "en" : "ar";
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-  document.getElementById("langBtn").innerText = currentLang === "ar" ? "EN" : "AR";
+    function switchLanguage() {
+      currentLang = currentLang === "ar" ? "en" : "ar";
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+      document.getElementById("langBtn").innerText = currentLang === "ar" ? "EN" : "AR";
 
-  // Translate main sections
-  document.getElementById("carSliderTitle").innerText = currentLang === "ar" ? "تجول معنا" : "Tjawal with us";
-  document.getElementById("carSliderSubtitle").innerText = currentLang === "ar" ? "اختر السيارة التي تناسبك" : "Choose the car that suits you";
-  document.getElementById("testimonialsTitle").innerText = currentLang === "ar" ? "آراء العملاء" : "Customer Reviews";
-  document.getElementById("testimonialsSubtitle").innerText = currentLang === "ar" ? "ما قالوه عنا" : "What they said about us";
-  document.getElementById("contactTitle").innerText = currentLang === "ar" ? "تواصل معنا" : "Contact Us";
-  document.getElementById("branch2").innerText = currentLang === "ar" ? "الفرع الثاني - عنيزة" : "Second Branch - Unaizah";
-  document.getElementById("branch1").innerText = currentLang === "ar" ? "الفرع الرئيسي - الرس" : "Main Branch - Ar Rass";
-  document.getElementById("rightsText").innerText = currentLang === "ar"
-    ? "جميع الحقوق محفوظة لشركة تجول © 2025"
-    : "© 2025 Tejawal Company. All rights reserved.";
+      // Translate main sections
+      document.getElementById("carSliderTitle").innerText = currentLang === "ar" ? "تجول معنا" : "Tjawal with us";
+      document.getElementById("carSliderSubtitle").innerText = currentLang === "ar" ? "اختر السيارة التي تناسبك" : "Choose the car that suits you";
+      document.getElementById("testimonialsTitle").innerText = currentLang === "ar" ? "آراء العملاء" : "Customer Reviews";
+      document.getElementById("testimonialsSubtitle").innerText = currentLang === "ar" ? "ما قالوه عنا" : "What they said about us";
+      document.getElementById("contactTitle").innerText = currentLang === "ar" ? "تواصل معنا" : "Contact Us";
+      document.getElementById("branch2").innerText = currentLang === "ar" ? "الفرع الثاني - عنيزة" : "Second Branch - Unaizah";
+      document.getElementById("branch1").innerText = currentLang === "ar" ? "الفرع الرئيسي - الرس" : "Main Branch - Ar Rass";
+      document.getElementById("rightsText").innerText = currentLang === "ar"
+        ? "جميع الحقوق محفوظة لشركة تجول © 2025"
+        : "© 2025 Tejawal Company. All rights reserved.";
 
-  // Translate info section and adjust alignment
-  const infoBoxes = document.querySelectorAll(".info-box");
-  const infoTexts = [
-  {
-    h4: "أوقات العمل",
-    h4_en: "Working Hours",
-    ps: [
-      "يومياً من الساعة 9 صباحا حتى 1 ظهرا",
-      "ومن الساعة 4 عصرا حتى 9:30 ليلا",
-      "ما عدا يوم الجمعة",
-      "مغلق"
-    ],
-    ps_en: [
-      "Daily from 9 AM to 1 PM",
-      "And from 4 PM to 9:30 PM",
-      "Except Friday",
-      "Closed"
-    ]
-  },
-  {
-    h4: "وين متواجدين",
-    h4_en: "Our Location",
-    ps: [
-      "الفرع الرئيسي:",
-      "القصيم - الرس",
-      "حي الزهرة",
-      "طريق الملك عبدالعزيز",
-      "الفرع الثاني:",
-      "القصيم - عنيزة",
-      "حي الملك خالد",
-      "شارع عمر بن الخطاب"
-    ],
-    ps_en: [
-      "Main Branch:",
-      "Al-Qassim - Ar Rass",
-      "Al-Zahra District",
-      "King Abdulaziz Road",
-      "Second Branch:",
-      "Al-Qassim - Unaizah",
-      "King Khalid District",
-      "Omar Ibn Al-Khattab Street"
-    ]
-  }
-];
-
-
-  infoBoxes.forEach((box, i) => {
-    const h4 = box.querySelector("h4");
-    const ps = box.querySelectorAll("p");
-
-    h4.innerText = currentLang === "ar" ? infoTexts[i].h4 : infoTexts[i].h4_en;
-    h4.style.textAlign = currentLang === "ar" ? "right" : "left";
-
-    ps.forEach((p, j) => {
-      p.innerText = currentLang === "ar" ? infoTexts[i].ps[j] : infoTexts[i].ps_en[j];
-      p.style.textAlign = currentLang === "ar" ? "right" : "left";
-    });
-  });
+      // Translate info section and adjust alignment
+      const infoBoxes = document.querySelectorAll(".info-box");
+      const infoTexts = [
+        {
+          h4: "أوقات العمل",
+          h4_en: "Working Hours",
+          ps: [
+            "يومياً من الساعة 9 صباحا حتى 1 ظهرا",
+            "ومن الساعة 4 عصرا حتى 9:30 ليلا",
+            "ما عدا يوم الجمعة",
+            "مغلق"
+          ],
+          ps_en: [
+            "Daily from 9 AM to 1 PM",
+            "And from 4 PM to 9:30 PM",
+            "Except Friday",
+            "Closed"
+          ]
+        },
+        {
+          h4: "وين متواجدين",
+          h4_en: "Our Location",
+          ps: [
+            "الفرع الرئيسي:",
+            "القصيم - الرس",
+            "حي الزهرة",
+            "طريق الملك عبدالعزيز",
+            "الفرع الثاني:",
+            "القصيم - عنيزة",
+            "حي الملك خالد",
+            "شارع عمر بن الخطاب"
+          ],
+          ps_en: [
+            "Main Branch:",
+            "Al-Qassim - Ar Rass",
+            "Al-Zahra District",
+            "King Abdulaziz Road",
+            "Second Branch:",
+            "Al-Qassim - Unaizah",
+            "King Khalid District",
+            "Omar Ibn Al-Khattab Street"
+          ]
+        }
+      ];
 
 
-   if (currentLang === "ar") {
-    document.title = "تجول لتأجير السيارات";
-  } else {
-    document.title = "Tejawal Car Rental";
-  }
+      infoBoxes.forEach((box, i) => {
+        const h4 = box.querySelector("h4");
+        const ps = box.querySelectorAll("p");
 
-  showCategory();
-  showTestimonial();
-}
+        h4.innerText = currentLang === "ar" ? infoTexts[i].h4 : infoTexts[i].h4_en;
+        h4.style.textAlign = currentLang === "ar" ? "right" : "left";
 
-window.onload = function () {
-  showCategory();
-  showTestimonial();
-  setInterval(nextTestimonial, 3000);
-  startAutoSlide();
-};
+        ps.forEach((p, j) => {
+          p.innerText = currentLang === "ar" ? infoTexts[i].ps[j] : infoTexts[i].ps_en[j];
+          p.style.textAlign = currentLang === "ar" ? "right" : "left";
+        });
+      });
+
+
+      if (currentLang === "ar") {
+        document.title = "تجول لتأجير السيارات";
+      } else {
+        document.title = "Tejawal Car Rental";
+      }
+
+      showCategory();
+      showTestimonial();
+    }
+
+    window.onload = function () {
+      showCategory();
+      showTestimonial();
+      setInterval(nextTestimonial, 3000);
+      startAutoSlide();
+    };
   </script>
 </head>
+
 <body>
-  
+
 
   <header>
     <button id="langBtn" class="langBtn" onclick="switchLanguage()">EN</button>
@@ -434,16 +455,16 @@ window.onload = function () {
         <p>القصيم - الرس</p>
         <p>حي الزهرة</p>
         <p>طريق الملك عبدالعزيز</p>
-         <br>
-    <p><b>الفرع الثاني:</b></p>
-    <p>القصيم - عنيزة</p>
-    <p>حي الملك خالد</p>
-    <p>شارع عمر بن الخطاب</p>
+        <br>
+        <p><b>الفرع الثاني:</b></p>
+        <p>القصيم - عنيزة</p>
+        <p>حي الملك خالد</p>
+        <p>شارع عمر بن الخطاب</p>
       </div>
     </div>
   </div>
   <br>
-<hr>
+  <hr>
   <br>
   <div class="testimonials-slider" style="max-width:600px;margin:40px auto;">
     <p id="testimonialsTitle" style="font-size:28px;">آراء العملاء</p>
@@ -458,35 +479,36 @@ window.onload = function () {
     </div>
   </div>
 
-<div class="contact">
-  <h3 id="contactTitle">تواصل معنا</h3>
-  <br>
+  <div class="contact">
+    <h3 id="contactTitle">تواصل معنا</h3>
+    <br>
 
-  <!-- Branch 1: Ar Rass -->
-  <div style="margin-bottom: 20px; text-align: center;">
-    <h4 id="branch1">الفرع الرئيسي - الرس</h4>
-    <div class="contact-icons">
-      <a href="https://wa.me/966503110944"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="tel:+966503110944"><i class="fa-solid fa-phone"></i></a>
-      <a href="https://maps.app.goo.gl/Q4Z87JivsomaEpCH9?g_st=ipc"><i class="fa-solid fa-location-dot"></i></a>
+    <!-- Branch 1: Ar Rass -->
+    <div style="margin-bottom: 20px; text-align: center;">
+      <h4 id="branch1">الفرع الرئيسي - الرس</h4>
+      <div class="contact-icons">
+        <a href="https://wa.me/966503110944"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:+966503110944"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://maps.app.goo.gl/Q4Z87JivsomaEpCH9?g_st=ipc"><i class="fa-solid fa-location-dot"></i></a>
+      </div>
     </div>
-  </div>
 
-  <!-- Branch 2: Unaizah -->
-  <div style="margin-bottom: 20px; text-align: center;">
-    <h4 id="branch2">الفرع الثاني - عنيزة</h4>
-    <div class="contact-icons">
-      <a href="https://wa.me/966554216656"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="tel:+966554216656"><i class="fa-solid fa-phone"></i></a>
-      <a href="https://maps.app.goo.gl/HGSo74mqgrNAYDjK7?g_st=ipc"><i class="fa-solid fa-location-dot"></i></a>
+    <!-- Branch 2: Unaizah -->
+    <div style="margin-bottom: 20px; text-align: center;">
+      <h4 id="branch2">الفرع الثاني - عنيزة</h4>
+      <div class="contact-icons">
+        <a href="https://wa.me/966554216656"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:+966554216656"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://maps.app.goo.gl/HGSo74mqgrNAYDjK7?g_st=ipc"><i class="fa-solid fa-location-dot"></i></a>
+      </div>
     </div>
-  </div>
 
-  <br>
-  <p id="rightsText" style="font-size: 14px; color: #ccc; margin-top: 10px; text-align: center;">
-    جميع الحقوق محفوظة لشركة تجول © 2025
-  </p>
-</div>
+    <br>
+    <p id="rightsText" style="font-size: 14px; color: #ccc; margin-top: 10px; text-align: center;">
+      جميع الحقوق محفوظة لشركة تجول © 2025
+    </p>
+  </div>
 
 </body>
+
 </html>
